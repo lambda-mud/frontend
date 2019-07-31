@@ -14,7 +14,7 @@ class NavBar extends Component {
         return(
             <div className="container">    
 
-            <a href="https://fontmeme.com/cursive-fonts/"><img src="https://fontmeme.com/permalink/190731/648b11a1756e910d518cfc11b45ff93c.png" alt="cursive-fonts" border="0" /></a>
+            <a className="font"href="https://fontmeme.com/cursive-fonts/"><img src="https://fontmeme.com/permalink/190731/648b11a1756e910d518cfc11b45ff93c.png" alt="cursive-fonts" border="0" /></a>
 
                 <div>
 
