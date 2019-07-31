@@ -9,8 +9,7 @@ class LoginForm extends Component {
     state = {
         userInfo: {
             username: '',
-            password1: '',
-            password2: ''
+            password: '',
         }
     }
 
@@ -56,6 +55,27 @@ class LoginForm extends Component {
                     onChange={this.changeHandler}
                 />
             </div>
+            <label>Username</label>
+            <input
+                id="username"
+                type="text"
+                name="username"
+                value={this.state.userInfo.username}
+                className='in user'
+                placeholder="Username"
+                onChange={this.changeHandler}
+            />
+            <label htmlFor="password">Password</label>
+            <input
+                id="password"
+                type="password"
+                name="password"
+                value={this.state.userInfo.password}
+                className='in pass'
+                placeholder="Password"
+                onChange={this.changeHandler}
+            />
+
             <button type='submit' className='actButton' >Log In!</button>
             <p>
                 Don't have an account yet?

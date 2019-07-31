@@ -10,11 +10,10 @@ export const signUp = userInfo => dispatch => {
     dispatch({ type: SIGN_UP})
     return axios.post('https://django-mud-backend.herokuapp.com/api/registration/', userInfo)
     .then(res => {
-        dispatch({ type: SIGN_UP_SUCCESS, payload: res.data.token})
-        localStorage.setItem('token', res.data.token);
+        dispatch({ type: SIGN_UP_SUCCESS, payload: res.data.key})
+        localStorage.setItem('token', `Token ${res.data.key}`);
         console.log(res);
-    })  
-        .catch(err => {
+    }).catch(err => {
         dispatch({ type: SIGN_UP_FAILURE, payload: err.message})
     })
 }
