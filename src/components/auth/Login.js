@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import './index.css';
 
 import { login } from '../../store/actions';
 
@@ -30,10 +31,29 @@ class LoginForm extends Component {
 
     render() {
         return (
-        <div className="form-wrap">
+        <div className="form-wrap login">
             <form className='login' onSubmit={this.submitDataHandler}>
-            <div className="sign-header">
-                <h3 className='cat-head'>Log In</h3>
+            <div>
+                <label>Username</label>
+                <input
+                    id="username"
+                    type="text"
+                    name="username"
+                    value={this.state.userInfo.username}
+                    placeholder="Username"
+                    onChange={this.changeHandler}
+                />
+            </div>
+            <div>
+                <label htmlFor="password">Password</label>
+                <input
+                    id="password"
+                    type="password"
+                    name="password1"
+                    value={this.state.userInfo.password}
+                    placeholder="Password"
+                    onChange={this.changeHandler}
+                />
             </div>
             <label>Username</label>
             <input
@@ -55,24 +75,16 @@ class LoginForm extends Component {
                 placeholder="Password"
                 onChange={this.changeHandler}
             />
-            {/* <label htmlFor="password">Password 2</label>
-            <input
-                id="password"
-                type="password"
-                name="password2"
-                value={this.state.userInfo.password}
-                className='in pass'
-                placeholder="Password 2"
-                onChange={this.changeHandler}
-            /> */}
+
             <button type='submit' className='actButton' >Log In!</button>
             <p>
-                Log in below to access your map. Don't have an account yet?
+                Don't have an account yet?
                 <br></br>
-                <Link to="/sign-up">Create one here.</Link>
+                <Link className="link" to="/sign-up">Create one here.</Link>
             </p>
             </form>
             <div />
+            <h1 className="heading login">Welcome back! Log in to continue your road trip!</h1>
         </div>
         )
     }

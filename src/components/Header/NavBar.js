@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import './index.css'
 
 class NavBar extends Component {
 
@@ -11,10 +12,19 @@ class NavBar extends Component {
 
     render() {
         return(
-            <div>    
-                <NavLink to='/sign-up'>Sign Up</NavLink>
+            <div className="container">    
 
-                <NavLink to='/log-in'>Log In</NavLink>
+            <a className="font"href="https://fontmeme.com/cursive-fonts/"><img src="https://fontmeme.com/permalink/190731/648b11a1756e910d518cfc11b45ff93c.png" alt="cursive-fonts" border="0" /></a>
+
+                <div>
+
+                    <button className="authButton">
+                        <NavLink className="" to='/sign-up'>Sign Up</NavLink>
+                    </button>
+                    <button className="authButton">
+                        <NavLink to='/log-in'>Log In</NavLink>
+                    </button>
+                </div>
             </div>
         )
     }
