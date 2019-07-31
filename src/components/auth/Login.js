@@ -8,8 +8,7 @@ class LoginForm extends Component {
     state = {
         userInfo: {
             username: '',
-            password1: '',
-            password2: ''
+            password: '',
         }
     }
 
@@ -46,17 +45,17 @@ class LoginForm extends Component {
                 placeholder="Username"
                 onChange={this.changeHandler}
             />
-            <label htmlFor="password">Password 1</label>
+            <label htmlFor="password">Password</label>
             <input
                 id="password"
                 type="password"
-                name="password1"
+                name="password"
                 value={this.state.userInfo.password}
                 className='in pass'
-                placeholder="Password 1"
+                placeholder="Password"
                 onChange={this.changeHandler}
             />
-            <label htmlFor="password">Password 2</label>
+            {/* <label htmlFor="password">Password 2</label>
             <input
                 id="password"
                 type="password"
@@ -65,7 +64,7 @@ class LoginForm extends Component {
                 className='in pass'
                 placeholder="Password 2"
                 onChange={this.changeHandler}
-            />
+            /> */}
             <button type='submit' className='actButton' >Log In!</button>
             <p>
                 Log in below to access your map. Don't have an account yet?
