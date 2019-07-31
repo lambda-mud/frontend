@@ -1,0 +1,65 @@
+.headingCont{
+    width: 50%;
+    padding-top: 100px;
+    padding-left: 250px;
+    width: 632px;
+    text-align: center;
+}
+
+.heading{
+    color: seagreen;
+    font-size: 70px;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+
+.heading.login{
+    width: 37%;
+    padding-top: 100px;
+}
+
+.form-wrap{
+    display: flex;
+    padding-left: 115px;
+}
+
+.form-wrap.login{
+    padding-left: 10%;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 42%;
+    padding-top: 110px;
+    justify-content: space-around;
+    height: 550px;
+}
+
+.input{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    display: flex;
+    border: none;
+    border-radius: 5px;
+    padding: 6px;
+    margin-top: 5px;
+
+}
+
+.actButton{
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.link{
+    color: seagreen;
+}

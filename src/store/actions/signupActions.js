@@ -13,7 +13,8 @@ export const signUp = userInfo => dispatch => {
         dispatch({ type: SIGN_UP_SUCCESS, payload: res.data.token})
         localStorage.setItem('token', res.data.token);
         console.log(res);
-    })    .catch(err => {
+    })  
+        .catch(err => {
         dispatch({ type: SIGN_UP_FAILURE, payload: err.message})
     })
 }
