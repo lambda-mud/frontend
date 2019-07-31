@@ -7,11 +7,12 @@ export const LOG_IN_FAILURE = 'LOG_IN_FAILURE';
 
 export const login = userInfo => dispatch => {
     dispatch({ type: LOG_IN })
-    return axios.post('https://django-mud-backend.herokuapp.com/api/login', userInfo)
+    return axios.post('https://django-mud-backend.herokuapp.com/api/login/', userInfo)
     .then(res => {
-        dispatch({ type: LOG_IN_SUCCESS, payload: res.data.token })
-        localStorage.setItem('token', res.data.token);
-        localStorage.setItem('user_id', res.data.user_id);
+        console.log(res.data)
+        dispatch({ type: LOG_IN_SUCCESS, payload: res.data.key })
+        localStorage.setItem('token', `Token ${res.data.key}`);
+        localStorage.setItem('location', res.data.title);
     })
     .catch(err => {
         dispatch({ type: LOG_IN_FAILURE, payload: err.message })
