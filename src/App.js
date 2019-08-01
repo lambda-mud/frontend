@@ -11,9 +11,9 @@ function App() {
   return (
       <Router className="App">
         <NavBar />
-        <Route path='/sign-up' component={SignUp} />
-        <Route path='/log-in' component={Login} />
-        <ProtectedRoute path="/" component={GamePage}/>
+        <Route exact path='/sign-up' component={SignUp} />
+        <Route exact path='/log-in' component={Login} />
+        <ProtectedRoute path="/" exact component={GamePage}/>
         {/* <GamePage /> */}
       </Router>
   );
