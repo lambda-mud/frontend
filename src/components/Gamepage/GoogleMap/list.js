@@ -1,82 +1,232 @@
 import bluemarker from "./roadtripmarkericon.ico";
+import carMarker from "./roadtripmarkericon.ico";
 import redmarker from "./markericon.ico";
 
-export { StatesList, StatePolyline, MapZoom };
+export {  StatePolyline, cityMarkers };
 
-const California = () => {
-  if (localStorage.getItem("location") === "California") {
-    return bluemarker;
-  } else {
-    return redmarker;
-  }
-};
-const Nevada = () => {
-  if (localStorage.getItem("location") === "Nevada") {
-    return bluemarker;
-  } else {
-    return redmarker;
-  }
-};
-const Oregon = () => {
-  if (localStorage.getItem("location") === "Oregon") {
-    return bluemarker;
-  } else {
-    return redmarker;
-  }
-};
-const Washington = () => {
-  if (localStorage.getItem("location") === "Washington") {
-    return bluemarker;
+
+const marker = city => {
+  if (localStorage.getItem("location") === city) {
+    return carMarker;
   } else {
     return redmarker;
   }
 };
 
-const MapZoom = () => {
-  if (localStorage.getItem("location") === "California") {
+const cityMarkers = city => {
+  if (city === "Pierre") {
     return {
-      lat: 36.7783,
-      lng: -119.4179
+      key: `${city}`,
+      lat: 44.3668,
+      lng: -100.3538,
+      // checkZoom: `${MapZoom(city, 47.6062 - 122.3321)}`,
+      url: `${marker(city)}`
     };
   }
-  if (localStorage.getItem("location") === "Oregon") {
+  if (city === "Seattle") {
     return {
-      lat: 43.8041,
-      lng: -120.5542
+      key: `${city}`,
+      lat: 47.6062,
+      lng: -122.3321,
+      url: `${marker(city)}`
     };
   }
-  if (localStorage.getItem("location") === "Washington") {
+  if (city === "Spokane") {
     return {
-      lat: 47.7511,
-      lng: -120.7401
+      key: `${city}`,
+      lat: 47.6588,
+      lng: -117.426,
+      url: `${marker(city)}`
     };
   }
-  if (localStorage.getItem("location") === "Nevada") {
+  if (city === "Portland") {
     return {
-      lat: 38.313515,
-      lng: -117.055374
+      key: `${city}`,
+      lat: 45.5155,
+      lng: -122.6793,
+      url: `${marker(city)}`
     };
+  }
+  if (city === "Sacramento") {
+    return {
+      key: `${city}`,
+      lat: 38.5816,
+      lng: -121.4944,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "San Francisco") {
+    return {
+      key: `${city}`,
+      lat: 37.7749,
+      lng: -122.4194,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Reno") {
+    return {
+      key: `${city}`,
+      lat: 39.5296,
+      lng: -119.8138,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Las Vegas") {
+    return {
+      key: `${city}`,
+      lat: 36.1699,
+      lng: -115.1398,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Phoenix") {
+    return {
+      key: `${city}`,
+      lat: 33.4484,
+      lng: -112.074,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Boise") {
+    return {
+      key: `${city}`,
+      lat: 43.615,
+      lng: -116.2023,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Salt Lake City") {
+    return {
+      key: `${city}`,
+      lat: 40.7608,
+      lng: -111.891,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Helena") {
+    return {
+      key: `${city}`,
+      lat: 46.5891,
+      lng: -112.0391,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Billings") {
+    return {
+      key: `${city}`,
+      lat: 45.7833,
+      lng: -108.5007,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Yellowstone National Park") {
+    return {
+      key: `${city}`,
+      lat: 44.428,
+      lng: -110.5885,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Cheyenne") {
+    return {
+      key: `${city}`,
+      lat: 41.14,
+      lng: -104.8202,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Denver") {
+    return {
+      key: `${city}`,
+      lat: 39.7392,
+      lng: -104.9903,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Albuquerque") {
+    return {
+      key: `${city}`,
+      lat: 35.0844,
+      lng: -106.6504,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Bismarck") {
+    return {
+      key: `${city}`,
+      lat: 46.8083,
+      lng: -100.7837,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Fargo") {
+    return {
+      key: `${city}`,
+      lat: 46.8772,
+      lng: -96.7898,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Lincoln") {
+    return {
+      key: `${city}`,
+      lat: 40.8136,
+      lng: -96.7026,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Wichita") {
+    return {
+      key: `${city}`,
+      lat: 37.6872,
+      lng: -97.3301,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Oklahoma City") {
+    return {
+      key: `${city}`,
+      lat: 35.4676,
+      lng: -97.5164,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Portland") {
+    return {
+      key: `${city}`,
+      lat: 45.5155,
+      lng: -122.6793,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Austin") {
+    return {
+      key: `${city}`,
+      lat: 30.2672,
+      lng: -97.7431,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Kansas City") {
+    return {
+      key: `${city}`,
+      lat: 39.0997,
+      lng: -94.5786,
+      url: `${marker(city)}`
+    };
+  }
+  if (city === "Houston") {
+    return {
+      key: `${city}`,
+      lat: 29.7604,
+      lng: -95.3698,
+      url: `${marker(city)}`
+    };
+  } else {
+    return `${console.log(city)}`
+    ;
   }
 };
-
-
-const StatesList = [
-  {
-    key: "california",
-    lat: 36.7783,
-    lng: -119.4179,
-    url: `${California()}`
-  },
-  { key: "nevada", lat: 38.8026, lng: -116.4194, url: `${Nevada()}` },
-  {
-    key: "washington",
-    lat: 47.7511,
-    lng: -120.7401,
-    url: `${Washington()}`
-  },
-  { key: "oregon", lat: 43.8041, lng: -120.5542, url: `${Oregon()}` }
-];
-
 const StatePolyline = [
   {
     // cali to nevada
@@ -85,18 +235,4 @@ const StatePolyline = [
     lat2: 38.8026,
     lng2: -116.4194
   },
-  {
-    // cali to oregon
-    lat: 47.7511,
-    lng: -120.7401,
-    lat2: 43.8041,
-    lng2: -120.5542
-  },
-  {
-    // oregon to washington
-    lat: 36.7783,
-    lng: -119.4179,
-    lat2: 43.8041,
-    lng2: -120.5542
-  }
 ];

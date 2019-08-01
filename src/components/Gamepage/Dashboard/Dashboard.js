@@ -33,7 +33,10 @@ export default class Dashboard extends Component {
         <div>
           <h3>Players in this State</h3>
           {/* {this.players} */}
-          {this.props.players}
+          {this.props.players.length > 0 &&
+          this.props.players.map(player => {
+            return <div>{player}</div>
+          })}
         </div>
         {/* actions */}
         <div>

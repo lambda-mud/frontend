@@ -93,7 +93,7 @@ export default class GamePage extends Component {
         </div>
         <div style={{ width: "70%", height: "70vh" }}>
           <div style={{ width: "100%", height: "80%", borderLeft: "solid 5px #216049", borderBottom: "solid 5px #216049",}}>
-            <LocationMap />
+            <LocationMap rooms={this.state.rooms}/>
           </div>
           <div style={{ width: "100%", height: "20%" }}>
             <h2>About {this.state.title}</h2>
