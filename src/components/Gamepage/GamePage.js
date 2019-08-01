@@ -10,7 +10,8 @@ export default class GamePage extends Component {
     name: "",
     description: "",
     direction: "",
-    players: ""
+    players: "",
+    rooms: []
   };
 
   componentDidMount() {
@@ -20,7 +21,10 @@ export default class GamePage extends Component {
       }
     };
     axios
-      .get("https://django-mud-backend.herokuapp.com/api/adv/init/", axiosconfig)
+      .get(
+        "https://django-mud-backend.herokuapp.com/api/adv/init/",
+        axiosconfig
+      )
       .then(res => {
         console.log(res.data);
         localStorage.setItem("location", res.data.title);
@@ -30,6 +34,19 @@ export default class GamePage extends Component {
           name: res.data.name,
           description: res.data.description,
           players: res.data.players
+        });
+      })
+      .catch(err => console.log(err));
+
+    axios
+      .get(
+        "https://django-mud-backend.herokuapp.com/api/adv/rooms/",
+        axiosconfig
+      )
+      .then(res => {
+        console.log(res.data.rooms);
+        this.setState({
+          rooms: res.data.rooms
         });
       })
       .catch(err => console.log(err));
@@ -62,22 +79,20 @@ export default class GamePage extends Component {
   render() {
     console.log(this.state);
     return (
-      <div style={{ display: "flex", margin: "auto" }}>
-        <div style={{ width: "30%", height: "90vh" }}>
-          <div style={{height: "10%" }}>
-            <h1> Lambda Road Trip</h1>
+      <div style={{ display: "flex", margin: "auto", border:"solid 5px #216049", backgroundColor:"#ACC7CD", borderRadius:"10px",overflow: "hidden", }}>
+        <div style={{ width: "30%", height: "70vh" }}>
+          <div style={{ height: "80%" }}>
+            <Dashboard
+              sendRequest={this.sendRequest}
+              uuid={this.state.uuid}
+              title={this.state.title}
+              name={this.state.name}
+              players={this.state.players}
+            />
           </div>
-          <div style={{height: "80%" }}>
-          <Dashboard
-            sendRequest={this.sendRequest}
-            uuid={this.state.uuid}
-            title={this.state.title}
-            name={this.state.name}
-            players={this.state.players}
-          /></div>
         </div>
-        <div style={{ width: "70%", height: "90vh", border: "solid red 1px" }}>
-          <div style={{ width: "100%", height: "80%" }}>
+        <div style={{ width: "70%", height: "70vh" }}>
+          <div style={{ width: "100%", height: "80%", borderLeft: "solid 5px #216049", borderBottom: "solid 5px #216049",}}>
             <LocationMap />
           </div>
           <div style={{ width: "100%", height: "20%" }}>

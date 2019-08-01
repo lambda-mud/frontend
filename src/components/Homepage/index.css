@@ -1,0 +1,19 @@
+.homepage-container {
+width:100%
+}
+.tablet{
+    margin: auto;
+    background-image: url("./tablet.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width:500px;
+    height:500px;
+
+}
+
+.roadtripimg {
+    margin-top:30px;
+    margin-left:85px;
+    height:250px;
+    width:320px;
+}

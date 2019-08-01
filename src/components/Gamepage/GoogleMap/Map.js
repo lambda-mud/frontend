@@ -9,10 +9,13 @@ import {
 import { StatesList, StatePolyline, MapZoom } from "./list";
 
 function Map() {
+
+  console.log(StatesList)
   return (
     <div>
       <GoogleMap defaultZoom={5.7} defaultCenter={MapZoom()}>
         {StatesList.map(state => (
+          
           <Marker
             key={state.id}
             position={{
@@ -21,7 +24,7 @@ function Map() {
             }}
             icon={{
               url: state.url,
-              scaledSize: new window.google.maps.Size(25, 40)
+              scaledSize: new window.google.maps.Size(50, 50)
             }}
           />
         ))}
@@ -39,9 +42,9 @@ function Map() {
             ]}
             geodesic={true}
             options={{
-              strokeColor: "#FAA632",
+              strokeColor: "#216049",
               strokeOpacity: 0.75,
-              strokeWeight: 5
+              strokeWeight: 7
             }}
           />
         ))}

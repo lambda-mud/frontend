@@ -1,5 +1,5 @@
-import bluemarker from "./bluemarker.png";
-import redmarker from "./redmarker.png";
+import bluemarker from "./roadtripmarkericon.ico";
+import redmarker from "./markericon.ico";
 
 export { StatesList, StatePolyline, MapZoom };
 
@@ -58,6 +58,7 @@ const MapZoom = () => {
     };
   }
 };
+
 
 const StatesList = [
   {
