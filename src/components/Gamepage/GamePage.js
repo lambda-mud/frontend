@@ -78,8 +78,29 @@ export default class GamePage extends Component {
       .catch(err => console.log(err));
   };
 
+  moneyTransaction = e => {
+    const axiosconfig = {
+      headers: {
+        Authorization: localStorage.getItem("token")
+      }
+    };
+    axios
+    .put(
+      "https://django-mud-backend.herokuapp.com/api/adv/add_money/",
+      { money: parseFloat(e.target.value)},
+      axiosconfig
+    )
+      .then(res => {
+        this.setState({
+          cash: res.data.cash,
+
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div style={{ display: "flex", margin: "auto", border:"solid 5px #216049", backgroundColor:"#ACC7CD", borderRadius:"10px",overflow: "hidden", }}>
         <div style={{ width: "30%", height: "70vh" }}>
@@ -91,6 +112,7 @@ export default class GamePage extends Component {
               name={this.state.name}
               players={this.state.players}
               cash={this.state.cash}
+              moneyTransaction={this.moneyTransaction}
             />
           </div>
         </div>
