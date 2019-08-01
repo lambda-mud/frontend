@@ -11,6 +11,7 @@ export default class GamePage extends Component {
     description: "",
     direction: "",
     players: "",
+    cash:"",
     rooms: []
   };
 
@@ -32,6 +33,7 @@ export default class GamePage extends Component {
           uuid: res.data.uuid,
           title: res.data.title,
           name: res.data.name,
+          cash: res.data.cash,
           description: res.data.description,
           players: res.data.players
         });
@@ -88,6 +90,7 @@ export default class GamePage extends Component {
               title={this.state.title}
               name={this.state.name}
               players={this.state.players}
+              cash={this.state.cash}
             />
           </div>
         </div>

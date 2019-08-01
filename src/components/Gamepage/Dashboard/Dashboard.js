@@ -25,7 +25,7 @@ export default class Dashboard extends Component {
               </p>
             </div>
             <div>
-              <h3>$1000</h3>
+              <h3>${this.props.cash}</h3>
             </div>
           </div>
         </div>
