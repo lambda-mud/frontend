@@ -1,0 +1,46 @@
+.errorpage {
+  margin: auto;
+  width: 70%;
+  padding: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  border: 6px #dac404 solid;
+  background: #e3ebed;
+  border-radius: 20px;
+}
+.errorpage div {
+  /* border:solid; */
+  width: 49%;
+  text-align: center;
+  margin: auto;
+  border-radius: 100px;
+}
+
+.errorpage div h1 {
+  font-size: 50px;
+}
+
+.errorpage div p {
+  font-size: 30px;
+}
+
+.errorpage img {
+  /* border:solid; */
+  width: 49%;
+}
+
+.error {
+  padding: 20px;
+}
+
+.returnhome {
+  color: white;
+  background: #00a870;
+  margin-right: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 3px #dac404 solid;
+  cursor: pointer;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}

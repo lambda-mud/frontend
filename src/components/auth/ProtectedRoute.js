@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import { Redirect } from 'react-router';
+// import { Redirect } from 'react-router';
+import Homepage from '../Homepage/Homepage'
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
     <Route
@@ -9,7 +10,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
         localStorage.getItem('token') ? (
             <Component {...props} />
         ) : (
-            <Redirect to="/log-in" />
+            // <Redirect to="/" />
+            <Homepage />
         )
         }
     />

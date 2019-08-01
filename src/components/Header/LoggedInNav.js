@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "./index.css";
 
-class NavBar extends Component {
+class LoggedInNav extends Component {
   logOut = () => {
     localStorage.removeItem("token");
-
-    this.props.checkSignIn();
-    this.props.history.push("/log-in");
+    // this.props.checkSignIn();
+    // this.props.history.push("/log-in");
   };
+
 
   render() {
     return (
@@ -20,12 +20,9 @@ class NavBar extends Component {
             border="0"
           />
         </a>
-                <div>
-          <NavLink className="authButton" to="/sign-up">
-            Sign Up
-          </NavLink>
-          <NavLink className="authButton" to="/log-in">
-            Log In
+        <div>
+          <NavLink className="authButton" to="/" onClick={this.logOut}>
+            Log Out
           </NavLink>
         </div>
       </div>
@@ -33,4 +30,4 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+export default LoggedInNav;

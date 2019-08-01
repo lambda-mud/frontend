@@ -2,11 +2,11 @@ import React, { Component } from "react";
 
 export default class Dashboard extends Component {
   render() {
-    //   const players = this.props.players
+
 
     const players = [this.props.players];
-    console.log(players);
-    // const array = players.map(player => player)
+    // console.log(players);
+
     return (
       <div             >
         {/* player info */}
@@ -33,7 +33,7 @@ export default class Dashboard extends Component {
         <div>
           <h3>Players in this State</h3>
           {/* {this.players} */}
-          <p>irving</p>
+          {this.props.players}
         </div>
         {/* actions */}
         <div>
