@@ -1,18 +1,22 @@
-.about {
-  /* display: flex;
+.row {
+    display: flex;
+
     align-items: center;
-    justify-content: center; */
-  margin-top: 60px;
+    justify-content: center; 
+  /* margin-top: 60px; */
 }
 .team {
-  display: flex;
+  display: flex;flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
 }
 .member {
-  width: 250px;
+  width: 240px;
   margin: 10px;
+  text-align: center;
+  padding-bottom:20px;
+  border-bottom: solid seagreen 2px;
 }
 .profileImg {
   width: 100%;
