@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LocationMap from "./GoogleMap/Map";
 import axios from "axios";
 import Dashboard from "./Dashboard/Dashboard";
+import FullMapButton from './GoogleMap/material-ui/fullmapbutton'
 
 export default class GamePage extends Component {
   state = {
@@ -116,7 +117,9 @@ export default class GamePage extends Component {
           </div>
         </div>
         <div style={{ width: "70%", height: "70vh" }}>
+          <FullMapButton rooms={this.state.rooms} />
           <div style={{ width: "100%", height: "80%", borderLeft: "solid 5px #216049", borderBottom: "solid 5px #216049",}}>
+          
             <LocationMap rooms={this.state.rooms}/>
           </div>
           <div style={{ width: "100%", height: "20%" }}>

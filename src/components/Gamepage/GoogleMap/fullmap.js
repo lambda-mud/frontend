@@ -6,11 +6,11 @@ import {
   Marker,
   Polyline
 } from "react-google-maps";
-import {StatePolyline, cityMarkers } from "./list";
-import FullMapButton from './material-ui/fullmapbutton'
+import { StatePolyline, cityMarkers } from "./list";
 
 function Map(props) {
-    const mapSettings = {
+  console.log(cityMarkers(localStorage.getItem("new")));
+  const mapSettings = {
     fullscreenControl: false,
     zoomControl: false,
     mapTypeControl: false,
@@ -18,25 +18,26 @@ function Map(props) {
   return (
     <div>
       <GoogleMap
-        defaultZoom={11}
-        defaultCenter={cityMarkers(localStorage.getItem("location"))}
+        defaultZoom={3.9}
+        defaultCenter={{ lat: 39, lng: -109 }}
         defaultOptions={ mapSettings }
-
       >
-        {console.log("rooms",props.rooms)}
+        {console.log("rooms", props.rooms)}
         {props.rooms.map(state => {
           const cityInfo = cityMarkers(state.title);
-         return <Marker
-          key={cityInfo.key}
-          position={{
-            lat: cityInfo.lat,
-            lng: cityInfo.lng 
-          }}
-          icon={{
-            url: cityInfo.url,
-            scaledSize: new window.google.maps.Size(50, 50)
-          }}
-        />
+          return (
+            <Marker
+              key={cityInfo.key}
+              position={{
+                lat: cityInfo.lat,
+                lng: cityInfo.lng
+              }}
+              icon={{
+                url: cityInfo.url,
+                scaledSize: new window.google.maps.Size(50, 50)
+              }}
+            />
+          );
         })}
         {StatePolyline.map(polyline => (
           <Polyline
@@ -65,10 +66,9 @@ function Map(props) {
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-export default function locationMap(props) {
+export default function fullMap(props) {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
-      
+    <div style={{ width: "400px", height: "500px" }}>
       <MapWrapped
         googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${
           process.env.REACT_APP_GOOGLE_KEY
@@ -77,7 +77,7 @@ export default function locationMap(props) {
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         rooms={props.rooms}
-      /><FullMapButton rooms={props.rooms} />
+      />
     </div>
   );
 }
