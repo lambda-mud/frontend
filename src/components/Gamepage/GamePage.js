@@ -74,7 +74,7 @@ export default class GamePage extends Component {
       .then(res => {
         //   localStorage.setItem("token", `Token ${res.data.key}`);
 
-        console.log('hi');
+        console.log(res.data);
         localStorage.setItem("location", res.data.title);
         window.location.reload(true);
       })
