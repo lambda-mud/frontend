@@ -25,7 +25,7 @@ class SignUp extends Component {
     
     submitDataHandler = event => {
         event.preventDefault();
-        this.props.signUp(this.state.userInfo)
+        this.props.signUp(this.state.userInfo).then(() => this.props.history.push("/"))
     };
 
     render () {
