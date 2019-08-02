@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./index.css"
 
 export default class Dashboard extends Component {
   render() {
@@ -14,31 +15,34 @@ export default class Dashboard extends Component {
           <h3>Player Info</h3>
           <div
             style={{
-              display: "flex",
+              display: "flex" 
             }}
           >
             <div style={{ width: "80%" }}>
-              <p>Name: {this.props.name}</p>
-              <p>
-                Current Location: <br />
+              <p>Welcome back {this.props.name}!</p>
+              <p style={{ paddingBottom: "30px" }}>
+                {/* Current Location: <br /> */}
+                <i class="fas location fa-location-arrow"></i>
                 {this.props.title}
               </p>
             </div>
-            <div>
-              <h3>$1000</h3>
+            <div className="money">
+              <i className="fas fa-money-bill-wave"></i>
+              <h3>1000</h3>
             </div>
           </div>
         </div>
         {/* Other players in this location */}
         <div>
           <h3>Players in this State</h3>
+          <hr />
           {/* {this.players} */}
           {this.props.players}
         </div>
         {/* actions */}
         <div>
           <div>
-            <h2>Actions:</h2>
+            <h2>Tasks:</h2>
             <p>stuff</p>
             <p>stuff</p>
             <p>stuff</p>
@@ -49,18 +53,21 @@ export default class Dashboard extends Component {
           </div>
         </div>
         {/* move direction buttons */}
-        <div>
-          <button name="n" value="n" onClick={this.props.sendRequest}>
-            North
+        <h2>Where to next?</h2>
+        <div className="directionContainer">
+          <button className="direction ns" name="n" value="n" onClick={this.props.sendRequest}>
+            N
           </button>
-          <button name="s" value="s" onClick={this.props.sendRequest}>
-            South
+          <br></br>
+          <button className="direction" name="w" value="w" onClick={this.props.sendRequest}>
+            W
           </button>
-          <button name="w" value="w" onClick={this.props.sendRequest}>
-            West
+          <button className="direction" name="e" value="e" onClick={this.props.sendRequest}>
+            E
           </button>
-          <button name="e" value="e" onClick={this.props.sendRequest}>
-            East
+          <br></br>
+          <button className="direction ns" name="s" value="s" onClick={this.props.sendRequest}>
+            S
           </button>
         </div>
       </div>

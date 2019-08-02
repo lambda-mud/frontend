@@ -6,7 +6,6 @@ export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
 export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE'
 
 export const signUp = userInfo => dispatch => {
-    console.log(userInfo)
     dispatch({ type: SIGN_UP})
     return axios.post('https://django-mud-backend.herokuapp.com/api/registration/', userInfo)
     .then(res => {

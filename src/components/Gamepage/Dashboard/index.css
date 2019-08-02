@@ -1,0 +1,26 @@
+.directionContainer{
+    margin-left: 130px;
+}
+
+.direction {
+    border-radius: 2px;
+    border: 1px solid brown;
+    background: #c8a67a;
+    margin: 15px;
+}
+
+.direction.ns {
+    margin-left: 46px;
+}
+
+.money{
+    display: flex;
+    align-items: center;
+}
+.fas{
+    padding-top: 25px;
+    color: green;
+}
+.fas.location{
+    color: #EA4335;
+}
