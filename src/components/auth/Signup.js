@@ -30,8 +30,9 @@ class SignUp extends Component {
 
     render () {
         return (
+            <>
+            {this.props.error && <p className="error">{this.props.error}</p>}
             <div className="form-wrap">
-                {this.props.error && <p>{this.props.error}</p>}
                 <div className="headingCont">
                     <h3 className='heading'>Register here to take a road trip on the west coast!</h3>
                 </div>
@@ -81,6 +82,7 @@ class SignUp extends Component {
             </form>
             <div />
         </div>
+        </>
         )
     }
 }
