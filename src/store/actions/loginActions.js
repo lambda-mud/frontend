@@ -9,7 +9,6 @@ export const login = userInfo => dispatch => {
     dispatch({ type: LOG_IN })
     return axios.post('https://django-mud-backend.herokuapp.com/api/login/', userInfo)
     .then(res => {
-        console.log(res.data)
         dispatch({ type: LOG_IN_SUCCESS, payload: res.data.key })
         localStorage.setItem('token', `Token ${res.data.key}`);
         localStorage.setItem('location', res.data.title);

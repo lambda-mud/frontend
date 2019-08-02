@@ -100,7 +100,6 @@ export default class GamePage extends Component {
   }
 
   render() {
-    // console.log(this.state);
     return (
       <div style={{ display: "flex", margin: "auto", border:"solid 5px #216049", backgroundColor:"#ACC7CD", borderRadius:"10px",overflow: "hidden", }}>
         <div style={{ width: "30%", height: "70vh" }}>
