@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { signUp } from "../../store/actions";
-import { Link } from 'react-router-dom';
-import './index.css';
+import { Link } from "react-router-dom";
+import "./index.css";
 
 class SignUp extends Component {
     state = {
@@ -89,10 +89,10 @@ class SignUp extends Component {
 }
 
 const mapStateToProps = state => ({
-    error: state.userReducer.error
-})
+  error: state.userReducer.error
+});
 
 export default connect(
-    mapStateToProps,
-    { signUp }
+  mapStateToProps,
+  { signUp }
 )(SignUp);

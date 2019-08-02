@@ -9,7 +9,6 @@ class LoggedInNav extends Component {
     // this.props.history.push("/log-in");
   };
 
-
   render() {
     return (
       <div className="container">
@@ -21,6 +20,18 @@ class LoggedInNav extends Component {
           />
         </a>
         <div>
+          <NavLink className="authButton" to="/team">
+            Team
+          </NavLink>
+          <a className="authButton" href="https://github.com/lambda-mud">
+            GitHub Repo
+          </a>
+          <a
+            className="authButton"
+            href="https://documenter.getpostman.com/view/7133880/SVYnSgct?version=latest"
+          >
+            API Doc
+          </a>
           <NavLink className="authButton" to="/" onClick={this.logOut}>
             Log Out
           </NavLink>

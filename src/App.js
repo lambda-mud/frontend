@@ -10,6 +10,7 @@ import {
 import GamePage from "./components/Gamepage/GamePage.js";
 import NotFound from "./components/PageNotFound/NotFound";
 import LoggedInNav from "./components/Header/LoggedInNav";
+import Aboutpage from "./components/AboutUs/aboutUs";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route path="/sign-up" component={SignUp} />
           <Route path="/log-in" component={Login} />
+          <Route path="/team" component={Aboutpage} />
           <ProtectedRoute exact path="/" component={GamePage} />
           <Route path="*" component={NotFound} />
         </Switch>

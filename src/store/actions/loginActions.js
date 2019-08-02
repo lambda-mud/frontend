@@ -11,7 +11,7 @@ export const login = userInfo => dispatch => {
     .then(res => {
         dispatch({ type: LOG_IN_SUCCESS, payload: res.data.key })
         localStorage.setItem('token', `Token ${res.data.key}`);
-        localStorage.setItem('location', res.data.title);
+        localStorage.setItem('location', "Seattle");
     })
     .catch(err => {
         dispatch({ type: LOG_IN_FAILURE, payload: err.message })
