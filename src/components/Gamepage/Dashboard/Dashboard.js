@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./index.css"
 
 export default class Dashboard extends Component {
   render() {
@@ -16,25 +17,31 @@ export default class Dashboard extends Component {
             }}
           >
             <div style={{ width: "80%" }}>
-              <p>Name: {this.props.name}</p>
-              <p>
-                Current Location: <br />
+              <p>Welcome back {this.props.name}!</p>
+              <p style={{ paddingBottom: "30px" }}>
+                {/* Current Location: <br /> */}
+                <i class="fas location fa-location-arrow"></i>
                 {this.props.title}
               </p>
             </div>
-            <div>
-              <h3>${this.props.cash}</h3>
-            </div>
+            <div className="money">
+              <i className="fas fa-money-bill-wave"></i>
+
+              <h3>{this.props.cash}</h3>
+
           </div>
         </div>
         {/* Other players in this location */}
         <div>
+          <hr />
           <h3>Players in this State</h3>
           {/* {this.players} */}
-          {this.props.players.length > 0 &&
-            this.props.players.map(player => {
-              return <div>{player}</div>;
-            })} 
+          <div>
+            {this.props.players.length > 0 &&
+              this.props.players.map(player => {
+                return <div>{player}</div>;
+              })} 
+          </div>
         </div>
         {/* actions */}
         <div>
@@ -45,6 +52,7 @@ export default class Dashboard extends Component {
               <button
                 name="job"
                 value="400"
+                className="build"
                 onClick={this.props.moneyTransaction}
               >
                 build
@@ -55,6 +63,7 @@ export default class Dashboard extends Component {
               <button
                 name="job"
                 value="-100"
+                className="eat"
                 onClick={this.props.moneyTransaction}
               >
                 eat
@@ -65,6 +74,7 @@ export default class Dashboard extends Component {
               <button
                 name="job"
                 value="-4"
+                className="eat"
                 onClick={this.props.moneyTransaction}
               >
                 eat
@@ -79,20 +89,24 @@ export default class Dashboard extends Component {
           </div> */}
         </div>
         {/* move direction buttons */}
-        <div>
-          <button name="n" value="n" onClick={this.props.sendRequest}>
-            North
+        <h2>Where to next?</h2>
+        <div className="directionContainer">
+          <button className="direction ns" name="n" value="n" onClick={this.props.sendRequest}>
+            N
           </button>
-          <button name="s" value="s" onClick={this.props.sendRequest}>
-            South
+          <br></br>
+          <button className="direction" name="w" value="w" onClick={this.props.sendRequest}>
+            W
           </button>
-          <button name="w" value="w" onClick={this.props.sendRequest}>
-            West
+          <button className="direction" name="e" value="e" onClick={this.props.sendRequest}>
+            E
           </button>
-          <button name="e" value="e" onClick={this.props.sendRequest}>
-            East
+          <br></br>
+          <button className="direction ns" name="s" value="s" onClick={this.props.sendRequest}>
+            S
           </button>
         </div>
+       </div>
       </div>
     );
   }
