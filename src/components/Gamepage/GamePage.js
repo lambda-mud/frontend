@@ -101,7 +101,7 @@ export default class GamePage extends Component {
 
   render() {
     return (
-      <div style={{ display: "flex", margin: "auto", border:"solid 5px #216049", backgroundColor:"#ACC7CD", borderRadius:"10px",overflow: "hidden", }}>
+      <div style={{ display: "flex", margin: "auto", border:"solid 5px #216049", backgroundColor:"#ACC7CD", borderRadius:"10px",overflow: "hidden", height: "800px" }}>
         <div style={{ width: "30%", height: "70vh" }}>
           <div style={{ height: "80%", padding: "13px"  }}>
             <Dashboard
@@ -115,7 +115,7 @@ export default class GamePage extends Component {
             />
           </div>
         </div>
-        <div style={{ width: "70%", height: "70vh" }}>
+        <div style={{ width: "70%", height: "80vh" }}>
           <div style={{ width: "100%", height: "80%", borderLeft: "solid 5px #216049", borderBottom: "solid 5px #216049",}}>
             <LocationMap rooms={this.state.rooms}/>
           </div>
