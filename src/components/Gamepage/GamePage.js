@@ -128,12 +128,13 @@ export default class GamePage extends Component {
       .catch(err => console.log(err));
   };
 
-  moneyTransaction = (e, prevState) => {
+  moneyTransaction = e => {
     const axiosconfig = {
       headers: {
         Authorization: localStorage.getItem("token")
       }
     };
+    const moneyValue = parseFloat(e.target.value)
     axios
       .put(
         "https://django-mud-backend.herokuapp.com/api/adv/add_money/",
@@ -150,9 +151,10 @@ export default class GamePage extends Component {
             disableButton: true
           });
         }
-          alert("You just earned money!!");
-          console.log("money");
-      
+        if (parseFloat(moneyValue) > 0) {
+          alert(`You just earned $${moneyValue}!! `);
+          // console.log(moneyValue);
+        }
       })
       .catch(err => console.log(err));
   };

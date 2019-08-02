@@ -130,10 +130,10 @@ export default class Dashboard extends Component {
                 </button>
               </div>
               {/* <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <p>Someone needs a HTML website for ${webJob}</p>
+                <p>Someone needs a HTML website for $1000</p>
                 <button
                   name="job"
-                  value={webJob}
+                  value='1000'
                   onClick={this.props.moneyTransaction}
                   className="authButton build"
                   style={{ color: "white", minWidth: "80px" }}
