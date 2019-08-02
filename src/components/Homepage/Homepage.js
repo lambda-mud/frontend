@@ -12,7 +12,7 @@ export default class Homepage extends Component {
         </div>
         <div className="info">
           <h1>Welcome to Lambda Roadtrip!</h1>
-          <p>You're a web developer who FINALLY has some time off so you decide to travel the United States! You can spend money travelling and eating but don't forget to keep your vacation alive by doing some freelancing!</p>
+          <p>You're a web developer who FINALLY has some time off so you decide to travel the United States! You can spend money travelling and eating. However, you'll cut your trip short by running out of money, so keep your vacation alive by doing some freelancing!</p>
         </div>
       </div>
     );
