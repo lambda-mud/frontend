@@ -31,6 +31,7 @@ class SignUp extends Component {
     render () {
         return (
             <div className="form-wrap">
+                {this.props.error && <p>{this.props.error}</p>}
                 <div className="headingCont">
                     <h3 className='heading'>Register here to take a road trip on the west coast!</h3>
                 </div>
@@ -84,7 +85,11 @@ class SignUp extends Component {
     }
 }
 
+const mapStateToProps = state => ({
+    error: state.userReducer.error
+})
+
 export default connect(
-    null,
+    mapStateToProps,
     { signUp }
 )(SignUp);
