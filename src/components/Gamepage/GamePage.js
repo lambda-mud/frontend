@@ -37,6 +37,9 @@ export default class GamePage extends Component {
           description: res.data.description,
           players: res.data.players
         });
+        if (this.state.title == 'Seattle' && this.state.cash == 800) {
+          alert("GAME OVER, you need to start again")
+        }
       })
       .catch(err => console.log(err));
 
@@ -71,7 +74,7 @@ export default class GamePage extends Component {
       .then(res => {
         //   localStorage.setItem("token", `Token ${res.data.key}`);
 
-        console.log(res.data);
+        console.log('hi');
         localStorage.setItem("location", res.data.title);
         window.location.reload(true);
       })
