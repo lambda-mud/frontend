@@ -1,8 +1,8 @@
-import bluemarker from "./roadtripmarkericon.ico";
+// import bluemarker from "./roadtripmarkericon.ico";
 import carMarker from "./roadtripmarkericon.ico";
 import redmarker from "./markericon.ico";
 
-export {  StatePolyline, cityMarkers };
+
 
 
 const marker = city => {
@@ -414,5 +414,17 @@ const StatePolyline = [
     lng: -97.3301,
     lat2: 39.0997,
     lng2: -94.5786,
-  }
+  },
+
+
+
+
+  // {
+  //   lat: 36.1699,
+  //   lng: -115.1398,
+  //   lat2: 33.4484,
+  //   lng2: -112.074,
+  // }
 ];
+
+export {  StatePolyline, cityMarkers };

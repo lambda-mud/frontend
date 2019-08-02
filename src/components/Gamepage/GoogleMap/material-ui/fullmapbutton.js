@@ -29,7 +29,7 @@ export default function DraggableDialog(props) {
 
   return (
     <div >
-      <button className="authButton" style={{color:"white", position: "absolute"}} onClick={handleClickOpen}>
+      <button className="authButton" style={{color:"white"}} onClick={handleClickOpen}>
       Open Full Map
           </button>
       <Dialog

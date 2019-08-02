@@ -7,7 +7,6 @@ import {
   Polyline
 } from "react-google-maps";
 import {StatePolyline, cityMarkers } from "./list";
-import FullMapButton from './material-ui/fullmapbutton'
 
 function Map(props) {
     const mapSettings = {
@@ -23,7 +22,7 @@ function Map(props) {
         defaultOptions={ mapSettings }
 
       >
-        {console.log("rooms",props.rooms)}
+        {/* {console.log("rooms",props.rooms)} */}
         {props.rooms.map(state => {
           const cityInfo = cityMarkers(state.title);
          return <Marker
@@ -77,7 +76,7 @@ export default function locationMap(props) {
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
         rooms={props.rooms}
-      /><FullMapButton rooms={props.rooms} />
+      />
     </div>
   );
 }

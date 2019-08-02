@@ -20,7 +20,15 @@ class NavBar extends Component {
             border="0"
           />
         </a>
-                <div>
+        <div>
+        <NavLink className="authButton" to="/">
+            Home
+          </NavLink>
+          <NavLink className="authButton" to="/team">
+            Team
+          </NavLink>
+          <a className="authButton" href="https://github.com/lambda-mud">GitHub Repo</a>
+          <a className="authButton" href="https://documenter.getpostman.com/view/7133880/SVYnSgct?version=latest">API Doc</a>
           <NavLink className="authButton" to="/sign-up">
             Sign Up
           </NavLink>
