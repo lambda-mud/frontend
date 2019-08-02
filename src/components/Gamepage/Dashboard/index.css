@@ -16,6 +16,7 @@
 .money{
     display: flex;
     align-items: center;
+    padding-top: 20px;
 }
 .fas{
     padding-top: 25px;
@@ -24,4 +25,14 @@
 }
 .fas.location{
     color: #EA4335;
+}
+
+.build{
+    height: fit-content;
+    width: 60px;
+    margin: 2px;
+}
+
+.eat{
+    height: fit-content;
 }

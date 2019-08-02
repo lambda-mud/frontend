@@ -50,6 +50,7 @@ export default class Dashboard extends Component {
               <button
                 name="job"
                 value="400"
+                className="build"
                 onClick={this.props.moneyTransaction}
               >
                 build
@@ -60,6 +61,7 @@ export default class Dashboard extends Component {
               <button
                 name="job"
                 value="-100"
+                className="eat"
                 onClick={this.props.moneyTransaction}
               >
                 eat
@@ -70,6 +72,7 @@ export default class Dashboard extends Component {
               <button
                 name="job"
                 value="-4"
+                className="eat"
                 onClick={this.props.moneyTransaction}
               >
                 eat
