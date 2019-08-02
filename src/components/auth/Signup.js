@@ -25,11 +25,13 @@ class SignUp extends Component {
     
     submitDataHandler = event => {
         event.preventDefault();
-        this.props.signUp(this.state.userInfo)
+        this.props.signUp(this.state.userInfo).then(() => this.props.history.push("/"))
     };
 
     render () {
         return (
+            <>
+            {this.props.error && <p className="error">{this.props.error}</p>}
             <div className="form-wrap">
                 <div className="headingCont">
                     <h3 className='heading'>Register here to take a road trip on the west coast!</h3>
@@ -80,11 +82,16 @@ class SignUp extends Component {
             </form>
             <div />
         </div>
+        </>
         )
     }
 }
 
+const mapStateToProps = state => ({
+    error: state.userReducer.error
+})
+
 export default connect(
-    null,
+    mapStateToProps,
     { signUp }
 )(SignUp);

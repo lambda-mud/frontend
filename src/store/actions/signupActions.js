@@ -11,8 +11,13 @@ export const signUp = userInfo => dispatch => {
     .then(res => {
         dispatch({ type: SIGN_UP_SUCCESS, payload: res.data.key})
         localStorage.setItem('token', `Token ${res.data.key}`);
-        console.log(res);
     }).catch(err => {
-        dispatch({ type: SIGN_UP_FAILURE, payload: err.message})
+        if (err.response.data.password1) {
+            dispatch({ type: SIGN_UP_FAILURE, payload: err.response.data.password1[0]})
+        } 
+
+        if (err.response.data.username) {
+            dispatch({ type: SIGN_UP_FAILURE, payload: err.response.data.username[0]})
+        }
     })
 }
