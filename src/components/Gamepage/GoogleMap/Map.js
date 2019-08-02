@@ -6,29 +6,32 @@ import {
   Marker,
   Polyline
 } from "react-google-maps";
-import { StatesList, StatePolyline, MapZoom } from "./list";
+import {StatePolyline, cityMarkers } from "./list";
 
-function Map() {
-
-  console.log(StatesList)
+function Map(props) {
+  console.log(cityMarkers(localStorage.getItem("new")));
   return (
     <div>
-      <GoogleMap defaultZoom={5.7} defaultCenter={MapZoom()}>
-        {StatesList.map(state => (
-          
-          <Marker
-            key={state.id}
-            position={{
-              lat: state.lat || 36.7783,
-              lng: state.lng || -119.4179
-            }}
-            icon={{
-              url: state.url,
-              scaledSize: new window.google.maps.Size(50, 50)
-            }}
-          />
-        ))}
-        {StatePolyline.map(polyline => (
+      <GoogleMap
+        defaultZoom={5.7}
+        defaultCenter={cityMarkers(localStorage.getItem("location"))}
+      >
+        {console.log("rooms",props.rooms)}
+        {props.rooms.map(state => {
+          const cityInfo = cityMarkers(state.title);
+         return <Marker
+          key={cityInfo.key}
+          position={{
+            lat: cityInfo.lat,
+            lng: cityInfo.lng 
+          }}
+          icon={{
+            url: cityInfo.url,
+            scaledSize: new window.google.maps.Size(50, 50)
+          }}
+        />
+        })}
+        {/* {StatePolyline.map(polyline => (
           <Polyline
             path={[
               {
@@ -47,7 +50,7 @@ function Map() {
               strokeWeight: 7
             }}
           />
-        ))}
+        ))} */}
       </GoogleMap>
     </div>
   );
@@ -55,7 +58,7 @@ function Map() {
 
 const MapWrapped = withScriptjs(withGoogleMap(Map));
 
-export default function locationMap() {
+export default function locationMap(props) {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <MapWrapped
@@ -65,6 +68,7 @@ export default function locationMap() {
         loadingElement={<div style={{ height: `100%` }} />}
         containerElement={<div style={{ height: `100%` }} />}
         mapElement={<div style={{ height: `100%` }} />}
+        rooms={props.rooms}
       />
     </div>
   );
